@@ -1,0 +1,21 @@
+@font-face {
+  font-family: secondary-font;
+  src: url(../assets/MantouSans-Regular.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font), sans-serif;
+  background-color: var(--bg-color-theme1);
+  color: var(--text-primary);
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  display: inline-block;
+}

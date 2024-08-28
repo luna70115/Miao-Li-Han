@@ -1,0 +1,135 @@
+.page-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__subtitle {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: var(--text-primary);
+    color: #ffffff;
+    font-size: 16px;
+  }
+  &__title {
+    font-family: var(--secondary-font);
+    font-size: 52px;
+    @include gradient-text;
+    @include desktop {
+      font-size: 64px;
+    }
+  }
+}
+.button {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 999px;
+  background-color: #f1f5f9;
+  color: var(--text-primary);
+  gap: 8px;
+
+  &--content {
+    font-size: 16px;
+    font-weight: 700;
+    font-weight: bold;
+  }
+  &--arrow {
+    font-size: 32px;
+  }
+}
+
+.container {
+  display: block;
+  padding-left: 16px;
+  padding-right: 16px;
+  @include tablet {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+  @include desktop {
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1320px;
+  }
+  &--row {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    @include desktop {
+      padding-top: 104px;
+      padding-bottom: 104px;
+    }
+  }
+}
+
+.row {
+  --gutter-x: 24px;
+  --gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(-1 * var(--gutter-y));
+  margin-right: calc(-0.5 * var(--gutter-x));
+  margin-left: calc(-0.5 * var(--gutter-x));
+
+  > * {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--gutter-x) * 0.5);
+    padding-left: calc(var(--gutter-x) * 0.5);
+    margin-top: var(--gutter-y);
+  }
+
+  > .col-12 {
+    width: 100%;
+    flex: 0 0 auto;
+  }
+
+  > .col-tablet-6 {
+    @include tablet {
+      width: 50%;
+    }
+  }
+
+  > .col-desktop-4 {
+    @include desktop {
+      width: 33.33%;
+    }
+  }
+}
+
+.election {
+  &__wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__num-wrapper {
+    position: relative;
+    border-radius: 9999px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-gradient);
+  }
+  &__num {
+    position: absolute;
+    left: 50%;
+    top: calc(50% - 2px); // 因為字體的關係，所以數字無法上下置中
+    transform: translate(-50%, -50%);
+    font-size: 26px;
+    font-weight: 900;
+    color: #ffffff;
+  }
+  &__name {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-primary);
+    @include desktop {
+      font-size: 40px;
+    }
+  }
+}
